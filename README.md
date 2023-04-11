@@ -9,6 +9,12 @@ A test taking tool for CSC134 with Professor Bill Mitchel. It is a simple way to
 
 > :information_source: **INFO**: This project is not affiliated with Sacramento State University or Professor Bill Mitchel. 
 
+## Download Latest
+You can download the latest version of the app from the [releases page](https://github.com/kyperbelt/134TestTaker/releases/tag/v0.0.1)
+1. [Windows](https://github.com/kyperbelt/134TestTaker/releases/download/v0.0.1/134QuizTaker.exe)
+2. [Linux](https://github.com/kyperbelt/134TestTaker/releases/download/v0.0.1/134QuizTaker.x86_64)
+3. [MacOS](https://github.com/kyperbelt/134TestTaker/releases/download/v0.0.1/134QuizTaker.zip)
+
 ## Build Instructions
 
 ### Requirements
@@ -31,6 +37,25 @@ A test taking tool for CSC134 with Professor Bill Mitchel. It is a simple way to
   * Configuration File.
 
 ## Usage
+
+1. Open up the app and click on the "Browse" button on the top right.
+2. Select the file that you want to open, or type the name of a new file and click ok.
+   1. If the file exists and its a valid test file, it will load the test questions and answers.
+   2. If it is a new file, it will create the new test file with the name you gave it.
+3. Enter Your last name into the Student Name field.
+4. Enter your answers into the Question Answer fields.'
+   1. The app validates that the answers are integers values.
+5. Click the "Save" button to save your answers or use the `CTRL+S` shortcut.
+
+### Expected output format: 
+```
+Student Lastname,1,2,3,4,1, , , , ,2, , , , , , , , , , 
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+For bugs and feature requests, please open an issue.
 
 
 
