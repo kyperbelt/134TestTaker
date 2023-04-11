@@ -30,6 +30,7 @@ func _ready():
 
 	get_viewport().gui_embed_subwindows = false
 	open_file_dialog = FileDialog.new()
+	open_file_dialog.title = "Select a file"
 	open_file_dialog.file_mode= FileDialog.FILE_MODE_SAVE_FILE
 	open_file_dialog.access = FileDialog.ACCESS_FILESYSTEM
 	open_file_dialog.file_selected.connect(on_file_selected)
@@ -57,7 +58,7 @@ func on_file_selected(path: String):
 	log_success("File Loaded: %s" % _path.text)
 
 func enable_editing():
-	_question_count.editable = true
+	# _question_count.editable = true
 	_name.editable = true
 	_save_button.disabled = false
 
@@ -134,12 +135,13 @@ func check_if_valid(path: String) -> bool:
 
 	var student_name :=	data[0]
 	var num_questions := data.size() - 1
-	for i in range(num_questions):
+	for i in range(int(_question_count.value)):
 		var question : = question_node.instantiate() as Question
 		_questions.add_child(question)
-		question.answer_field.text = data[i+1].strip_edges()
 		question.question_text.text = "Question %3d:" % (i+1)
-		question.on_text_changed(data[i+1].strip_edges())
+		if (i < num_questions):
+			question.answer_field.text = data[i+1].strip_edges()
+			question.on_text_changed(data[i+1].strip_edges())
 
 	_name.text = student_name
 	_question_count.value = num_questions
